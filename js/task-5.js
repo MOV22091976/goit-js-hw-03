@@ -1,11 +1,5 @@
 "use strict";
 
-// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов
-// и имя свойства.Возвращает МАССИВ (написал специально с верхним ригистром чтоб
-// не забыть, что надо создать переменную с пустым массивом, куда будут записывться
-// значения на возвращение!!!) значений определенного свойства 
-// prop (properties - свойства) из каждого объекта в массиве.
-
 const products = [{
         name: 'Радар',
         price: 1300,
@@ -39,8 +33,8 @@ const getAllPropValues = function (arr, prop) {
     return values;
 };
 
-console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+console.log(getAllPropValues(products, 'name'));
 
-console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+console.log(getAllPropValues(products, 'quantity'));
 
-console.log(getAllPropValues(products, 'category')); // []
+console.log(getAllPropValues(products, 'category'));

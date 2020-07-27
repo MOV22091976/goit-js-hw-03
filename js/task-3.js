@@ -1,10 +1,5 @@
 "use strict";
 
-// Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников 
-// и возвращает имя самого продуктивного(который выполнил больше всех задач).
-// Сотрудники и количество выполненых задач содержатся как свойства объекта в 
-// формате "имя": "количество задач".
-
 const tasksCompleted = {
     ann: 29,
     david: 35,
@@ -33,7 +28,7 @@ console.log(
         helen: 1,
         lorence: 99,
     }),
-); // name: lorence, numberTasks: 99
+);
 
 console.log(
     findBestEmployee({
@@ -41,7 +36,7 @@ console.log(
         mango: 17,
         ajax: 4,
     }),
-); // name: mango, numberTasks: 17
+);
 
 console.log(
     findBestEmployee({
@@ -50,4 +45,4 @@ console.log(
         kiwi: 19,
         chelsy: 38,
     }),
-); // name: lux, numberTasks: 147
+);

@@ -1,7 +1,4 @@
 "use strict";
-// Напиши функцию calculateTotalPrice(allProducts, productName), которая 
-// получает массив объектов и имя продукта(значение свойства name).
-// Возвращает общую стоимость продукта(цена * количество).
 
 const products = [{
         name: 'Радар',
@@ -25,7 +22,6 @@ const products = [{
     },
 ];
 
-// === через тернарный оператор ======
 const calculateTotalPrice = function (allProducts, productName) {
     let totalPrice = 0;
     for (const product of allProducts) {
@@ -39,67 +35,10 @@ const calculateTotalPrice = function (allProducts, productName) {
     return totalPrice
 };
 
-//=== через for ======
-// const calculateTotalPrice = function (allProducts, productName) {
-//     let total = 0;
-//     for (let i = 0; i < allProducts.length; i += 1) {
-//         if (allProducts[i].name === productName) {
-//             total = allProducts[i].price * allProducts[i].quantity
-//         }
-//     }
-//     return total;
-// };
+console.log(calculateTotalPrice(products, 'Радар'));
 
-//=== через for of ======
-// const calculateTotalPrice = function (allProducts, productName) {
-//     let total = 0;
-//     for (const product of allProducts) {
-//         //console.log(product.name);
-//         //console.log(product.price);
-//         //console.log(product.quantity)
+console.log(calculateTotalPrice(products, 'Дроид'));
 
-//         if (product.name === productName) {
-//             total = product.price * product.quantity;
-//         }
+console.log(calculateTotalPrice(products, 'Сканер'));
 
-//         //return productName + total
-//     };
-//     return total
-
-//     // === решение через for но с выносом переменной ххх ========
-
-//     //     for (let i = 0; i < allProducts.length; i += 1) {
-//     //         const xxx = allProducts[i]; // переменная является текущим продуктом
-//     //         if (allProducts[i].name === productName) { // если имя этого продукта === productName
-//     //             total = xxx.price * xxx.quantity;
-//     //         }
-//     //     }
-//     //     return total
-// };
-
-//=== через for of + деструктиризацию ======
-// const calculateTotalPrice = function (allProducts, productName) {
-
-//     let total = 0;
-
-//     for (const product of allProducts) {
-//         const {
-//             name,
-//             price,
-//             quantity
-//         } = product;
-
-//         if (product.name === productName) {
-//             total = price * quantity;
-//         }
-//     };
-//     return total
-// };
-
-console.log(calculateTotalPrice(products, 'Радар')); // 5200
-
-console.log(calculateTotalPrice(products, 'Дроид')); // 2800
-
-console.log(calculateTotalPrice(products, 'Сканер')); // 8100
-
-console.log(calculateTotalPrice(products, 'Захват')); // 2400
+console.log(calculateTotalPrice(products, 'Захват'));
