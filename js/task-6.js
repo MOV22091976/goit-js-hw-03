@@ -23,22 +23,13 @@ const products = [{
 ];
 
 const calculateTotalPrice = function (allProducts, productName) {
-    let totalPrice = 0;
     for (const product of allProducts) {
-        const {
-            name,
-            price,
-            quantity
-        } = product;
-        totalPrice = (product.name === productName) ? product.price * product.quantity : totalPrice
-    };
-    return totalPrice
+        if (product.name === productName) {
+            return product.price * product.quantity
+        }
+    }
 };
 
 console.log(calculateTotalPrice(products, 'Радар'));
 
 console.log(calculateTotalPrice(products, 'Дроид'));
-
-console.log(calculateTotalPrice(products, 'Сканер'));
-
-console.log(calculateTotalPrice(products, 'Захват'));

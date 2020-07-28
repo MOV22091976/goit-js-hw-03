@@ -23,7 +23,6 @@ const account = {
         this.balance += amount;
         const addTransaction = this.createTransaction(amount, Transaction.DEPOSIT);
         this.transactions.push(addTransaction);
-        return this.transactions;
     },
 
     withdraw(amount) {
@@ -35,7 +34,6 @@ const account = {
         this.balance -= amount;
         const addTransaction = this.createTransaction(amount, Transaction.WITHDRAW);
         this.transactions.push(addTransaction);
-        return this.transactions;
     },
 
     getBalance() {
@@ -46,10 +44,10 @@ const account = {
         for (const transaction of this.transactions) {
             if (id === transaction.id) {
                 return transaction;
+
             }
         }
     },
-
 
     getTransactionTotal(type) {
         let totalAmount = 0;
@@ -62,13 +60,14 @@ const account = {
     },
 };
 
-account.balance = 3000; // положили на баланс 3000
-console.log(account.getBalance()); // вернули текущий баланс 3000
-console.table(account.deposit(1000)); // положили 1000 на депозит
-account.withdraw(5000); // cнятие 5000 не возможно, недостаточно средств
-console.table(account.deposit(3000)); // положили 3000 на депозит
-console.table(account.withdraw(500)); // сняли с депозита 500
-console.log(account.getTransactionDetails(2)); // {id: 2, type: "deposit", amount: 3000}
-console.log(account.getBalance()); // 6500
-console.log(account.getTransactionTotal('deposit')); // 4000 - всего положили на депозит
-console.log(account.getTransactionTotal('withdraw')); // 500 - всего снимали с депозита
+account.balance = 30000; // положили на баланс 30000
+console.log(account.getBalance()); // проверили баланс 30000
+account.withdraw(50000); // cнятие 50000 не возможно, недостаточно средств
+account.withdraw(1000); // cнятие 1000
+console.log(account.getBalance()); // проверили баланс 29000
+console.log(account.createTransaction(5000, 'deposit')); // положили на депозит 5000
+console.log(account.createTransaction(7000, 'deposit')); // положили на депозит 7000
+account.deposit(333); // положили на баланс 333
+console.log(account.getBalance()); // проверили баланс 29333
+console.log(account.getTransactionDetails(2)); // {id: 2, type: "deposit", amount: 333}
+console.log(account.getTransactionTotal('deposit')); // 333

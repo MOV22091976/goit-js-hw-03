@@ -1,20 +1,15 @@
 "use strict";
 
 const user = {
-    name: 'Mango',
+    name: "Mango",
     age: 20,
-    hobby: 'html',
+    hobby: "html",
     premium: true,
-    changesProperties(newPropertie) {
-        this.hobby = newPropertie;
-    },
 };
 
-user.changesProperties('skydiving');
-console.log(user)
-
-user.mood = 'happy';
+user.mood = "happy";
 user.premium = false;
+user.hobby = "skydiving";
 
 const keys = Object.keys(user);
 

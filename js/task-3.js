@@ -10,16 +10,15 @@ const tasksCompleted = {
 const findBestEmployee = function (employees) {
     let max = 0;
     let name;
-    const entries = Object.entries(employees);
 
-    for (const [key, value] of entries) {
-        if (value > max) {
-            max = value;
+    for (const key in employees) {
+        if (employees[key] > max) {
+            max = employees[key];
             name = key;
         }
     }
-    return (`name: ${name}, numberTasks: ${max}`);
-};
+    return (`${name}`);
+}
 
 console.log(
     findBestEmployee({
